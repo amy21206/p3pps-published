@@ -1,0 +1,138 @@
+Skill Assessment
+================
+
+Instruction: How to solve a write-code problem in Runestone
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- You are required to write Python code during practice.  
+- The problems will have unit tests that you can run to check that your code is working correctly.  
+- Click on the "Run" button to compile and run your code.  
+- Look after the code area for compiler errors and/or unit test results.
+
+You can try to write the code for the following problem.
+
+.. activecode:: intro-sample-write-code-triple-p3pps
+    :autograde: unittest
+    :nocodelens:
+
+    Write a function called ``triple(num)``:
+        - It takes a number ``num`` as input.
+        - It returns the number times 3. 
+        
+    .. table::
+            :name: triple_table
+            :align: left
+            :width: 50
+
+            +-------------------------+--------------------+
+            | Example Input           | Expected Output    |
+            +=========================+====================+
+            |``triple(2)``            | ``6``              |
+            +-------------------------+--------------------+
+            |``triple(3)``            | ``9``              |
+            +-------------------------+--------------------+
+            |``triple(-1)``           | ``-3``             |
+            +-------------------------+--------------------+
+
+    ~~~~
+    def triple(num):
+        # write code here
+
+    print(triple(2))
+    print(triple(-1))
+
+    ====
+    from unittest.gui import TestCaseGui
+    class myTests(TestCaseGui):
+
+        def testOne(self):
+            self.assertEqual(triple(2),6,"triple(2)")
+            self.assertEqual(triple(3),9,"triple(3)")
+            self.assertEqual(triple(-1),-3,"triple(-1)")
+            self.assertEqual(triple(0),0,"triple(0)")
+            self.assertEqual(triple(11),33,"triple(11)")
+
+    myTests().main()
+
+
+Skill Assessment
+^^^^^^^^^^^^^^^^
+
+- Please finish this write-code problem without any outside help. 
+
+📌 Notice: If you cannot solve it within 3 minutes or if you give up during the process, scroll down to move on to the next page ⬇️. 
+
+
+.. activecode:: get_middle_skill_assess_ac
+    :autograde: unittest
+    :nocodelens:
+
+    Finish the function ``get_middle_connect(text, num)``:
+        - It takes a string ``text`` and a positive integer ``num`` as input.
+        - If ``text`` has less than 3 characters, then a new string with all the characters in the string ``text``, followed by the character ``@``, and then followed by ``num``.
+        - If ``text`` has 3 or more characters, then:
+            - If ``text`` has an odd length, then return the middle character of string ``text``, followed by the character ``@``, and then followed by ``num``.
+            - If ``text`` has an even length, return the two middle characters of string ``text``, followed by the character ``@``, and then followed by ``num``.
+    .. table::
+            :name: get_middle_skill_assess_table
+            :align: left
+            :width: 50
+
+            +-------------------------------------+--------------------+
+            | Example Input                       | Expected Output    |
+            +=====================================+====================+
+            |``get_middle_connect('abc', 24)``    | ``b@24``           |
+            +-------------------------------------+--------------------+
+            |``get_middle_connect('abcd', 30)``   | ``bc@30``          |
+            +-------------------------------------+--------------------+
+            |``get_middle_connect('ab', 20)``     | ``ab@20``          |
+            +-------------------------------------+--------------------+
+            |``get_middle_connect('abcde', 1)``   | ``c@1``            |
+            +-------------------------------------+--------------------+
+   
+    ~~~~
+    def get_middle_connect(text, num):
+
+
+
+
+
+
+    ====
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+
+        def testOne(self):
+            self.assertEqual(get_middle_connect('abc',24), 'b@24', "get_middle_connect('abc',24)")
+            self.assertEqual(get_middle_connect('abcd',20), 'bc@20', "get_middle_connect('abcd',20)")
+            self.assertEqual(get_middle_connect('12345',10), '3@10', "get_middle_connect('12345',10)")
+            self.assertEqual(get_middle_connect('123456',37), '34@37', "get_middle_connect('123456',37)")
+            self.assertEqual(get_middle_connect('ab',2), 'ab@2', "get_middle_connect('ab',2)")
+            self.assertEqual(get_middle_connect('a',1), 'a@1', "get_middle_connect('a',1)")
+            self.assertEqual(get_middle_connect('',0), '@0', "get_middle_connect('',0)")
+            
+
+                
+    myTests().main()
+
+   
+
+What to do next
+^^^^^^^^^^^^^^^^
+.. raw:: html
+
+    <p>Click on the following link to learn how to use the Help feature while writing code: <b><a id="p3-intro"><font size="+1">Introduction</font></a></b></p>
+
+.. raw:: html
+
+    <script type="text/javascript" >
+
+      window.onload = function() {
+
+        a = document.getElementById("p3-intro")
+        a.href = "pps-intro.html"
+
+      };
+
+    </script>

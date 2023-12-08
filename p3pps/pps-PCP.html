@@ -1,0 +1,905 @@
+<!-- ****************************************
+     |docname| - main template for this theme
+     **************************************** -->
+<!DOCTYPE html>
+
+<html  lang="en" class="runestone-sphinx">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Practice Problems &#8212; P3PPS</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css?v=E2DC0A34" />
+    <link rel="stylesheet" type="text/css" href="_static/webgldemo.css?v=B36B48D" />
+    <link rel="stylesheet" type="text/css" href="_static/webglinteractive.css?v=4182B24D" />
+    <link rel="stylesheet" type="text/css" href="_static/CodeChat.css" />
+    <link rel="stylesheet" type="text/css" href="_static/accessibility.css?v=50109A2C" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/prefix-vendors-node_modules_bootstrap_dist_js_bootstrap_js-node_modules_jquery-ui_jquery-ui_js-node_-d3d74f.d789e6e5a9767e06.css?v=FF9272ED" />
+    <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.a5dea4981ee05bfa.css?v=8E987209" />
+
+
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/matrixeq.js?v=D64CFA5A"></script>
+    <script src="_static/webglinteractive.js?v=2B768384"></script>
+    <script src="_static/FileSaver.min.js?v=8408C997"></script>
+    <script src="_static/html4css1.css?v=4533ACD3"></script>
+    <script src="_static/animationbase.js?v=A043C3A7"></script>
+    <script src="_static/prefix-runtime.bundle.js?v=6D7220FB"></script>
+    <script src="_static/prefix-vendors-node_modules_bootstrap_dist_js_bootstrap_js-node_modules_jquery-ui_jquery-ui_js-node_-d3d74f.bundle.js?v=C0231788"></script>
+    <script src="_static/prefix-runestone.bundle.js?v=3A6F1994"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+  
+<link rel="shortcut icon" href="/runestone/static/favicon.ico" type="image/ico" />
+
+
+
+<link rel="canonical" href="https://{{canonical_host}}{{new_server_prefix}}/books/published/{{base_course}}/{{pagepath}}" />
+
+
+<script>
+  eBookConfig = {};
+  
+    
+    eBookConfig.useRunestoneServices = {{use_services}};
+    eBookConfig.host = '';
+    eBookConfig.app = eBookConfig.host + '/runestone';
+    eBookConfig.course = '{{ course_name }}';
+    eBookConfig.basecourse = '{{ base_course }}';
+    eBookConfig.isLoggedIn = {{ is_logged_in}};
+    eBookConfig.email = '{{ user_email }}';
+    eBookConfig.isInstructor = {{ is_instructor }};
+    eBookConfig.username = '{{ user_id}}';
+    eBookConfig.readings = {{ readings|safe}};
+    eBookConfig.activities = {{ activity_info|safe }}
+    eBookConfig.downloadsEnabled = {{downloads_enabled}};
+    eBookConfig.allow_pairs = {{allow_pairs}}
+    eBookConfig.enableCompareMe = {{enable_compare_me}};
+    // _`new_server_prefix`: Defined by the server to be the path to the new server.
+    eBookConfig.new_server_prefix = '{{ new_server_prefix }}';
+    eBookConfig.served_by = '{{worker_name}}';
+    
+  
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.python3 = true;
+  eBookConfig.acDefaultLanguage = '' ? '' : 'python'
+  eBookConfig.runestone_version = '7.2.7';
+  eBookConfig.jobehost = '';
+  eBookConfig.proxyuri_runs = '';
+  eBookConfig.proxyuri_files = '';
+  eBookConfig.enable_chatcodes = false ? false : false;
+  eBookConfig.enableScratchAC = true;
+
+</script>
+
+<!-- Ad Serving Headers Only serve ads to Anonymous Users -->
+
+    
+        {% if serve_ad is defined and serve_ad and settings.adsenseid %}
+         <script data-ad-client="{{settings.adsenseid}}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {% endif %}
+    
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse" aria-label="navbar toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        
+        
+          <a class="brand-logo" href="/runestone/default/user/login" aria-label="Login"><img src="_static/img/RAIcon.png" alt=""></a>
+        
+        <a class="navbar-brand" href="/runestone" aria-label="index-page">
+          
+            
+            {{ course_name }}
+            
+          
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right" >
+
+        <li class="divider-vertical"></li>
+        <li><span id="ad_warning"></span></li>
+        <li><span id="browsing_warning"></span></li>
+
+        <li class="divider-vertical"></li>
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'><span class="visuallyhidden" aria-label="Search">Search</span></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html' aria-label="index-page">Table of Contents</a></li>
+            
+            <li><a href='genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"><span class="visuallyhidden" aria-label="User">User</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='/ns/course/index'>Course Home</a></li>            
+            <li><a href='/assignment/student/chooseAssignment'>Assignments</a></li>
+            <li><a href='/runestone/assignments/practice'>Practice</a></li>
+            <li id="inst_peer_link"><a href='/runestone/peer/instructor.html'>Peer Instruction (Instructor)</a></li>
+            <li><a href='/runestone/peer/student.html'>Peer Instruction (Student)</a></li>
+            <li class="divider"></li>
+            
+            <li><a href='/runestone/default/courses'>Change Course</a></li>
+			      <li class="divider"></li>
+            <li id="ip_dropdown_link"><a href='/runestone/admin/index'>Instructor's Page</a></li>
+            
+            <li><a href='/runestone/dashboard/studentreport'>Progress Page</a></li>
+            <li class="divider"></li>
+            
+            <li><a href="/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="/runestone/default/user/register" id="registerlink">Register</a></li>
+            
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+            <!-- dark mode toggle -->
+            <li><label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" onchange="runestoneComponents.switchTheme()" />
+              <div class="slider round"></div>Dark Mode
+            </label></li>
+			 </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+        <!-- <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li> -->
+
+        <!-- <li class="dropdown">             -->
+          <li id="scratch_ac_link" class="dropdown"><a href="javascript:runestoneComponents.popupScratchAC()">
+              <i class="glyphicon glyphicon-pencil" style="opacity:0.9;"><span class="visuallyhidden" aria-label="Scratch Activecode" >Scratch Activecode</span></i></a></li>
+        <!-- </li> -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"><span class="visuallyhidden" aria-label="Help">Help</span></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='http://runestoneinteractive.org/pages/faq.html'>FAQ</a></li>
+            <li><a href='https://guide.runestone.academy' target="_blank" rel="noopener noreferrer" >Instructors Guide</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='/runestone/default/reportabug?course=p3pps&page=pps-PCP'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+      
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          
+            <script></script>
+<li class="dropdown globaltoc-container">
+    <a
+        href="index.html"
+        class="dropdown-toggle"
+        data-toggle="dropdown"
+        aria-label="index"
+        >This Chapter<b class="caret"></b
+    ></a>
+    <ul class="dropdown-menu globaltoc">
+         
+        {% for row in subchapter_list %}
+        <li class="toctree-l1">
+            <a class="reference internal" href="{{ row['subchap_uri']}}"
+                >{{ row['title']}}</a
+            >
+        </li>
+        {% endfor %} 
+        
+    </ul>
+</li>
+          
+          <li class="divider-vertical"></li>
+        
+        <!-- 
+          
+
+<script>
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  window.addEventListener('load', (event) => {
+    $('#relations-prev').tooltip(opts);
+    $('#relations-next').tooltip(opts);
+  });
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+      </div> <!-- navbar-collapse -->
+    </div> <!-- navbar -->
+  </div> <!-- container -->
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content" role="main">
+
+<!-- Ad Serving for Runestone Campaign -->
+
+    
+        {% if show_rs_banner  %}
+         <script>
+           var showAd = true;
+         </script>
+         <div id="adcopy_1" class="adcopy" style="display: none;">
+           <h4>Before you keep reading...</h4>
+           <p>Runestone Academy can only continue if we get support from individuals like you. As a student you are well aware of the high cost of textbooks.  Our mission is to provide great books to you for free, but we ask that you consider a $10 donation, more if you can or less if $10 is a burden.
+           </p>
+           <div class="donateb">
+           <a href="/runestone/default/donate?ad=1" role="button" class="btn btn-info">Support Runestone Academy Today</a></div>
+         <div id="adcopy_2" class="adcopy" style="display: none;">
+            <h4>Before you keep reading...</h4>
+            <p>Making great stuff takes time and $$.  If you appreciate the book you are reading now and want to keep quality materials free for other students please consider a donation to Runestone Academy. We ask that you consider a $10 donation, but if you can give more thats great, if $10 is too much for your budget we would be happy with whatever you can afford as a show of support.
+            </p>
+            <div class="donateb">
+            <a href="/runestone/default/donate?ad=2" role="button" class="btn btn-info">Support Runestone Academy Today</a></div>
+         </div>
+         </div>
+        {% else %}
+        <script>
+          var showAd = false;
+        </script>
+        {% endif %}
+    
+
+
+  
+  <section id="practice-problems">
+<h1>Practice Problems<a class="headerlink" href="#practice-problems" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This exercise consists of six write-code problems in two pages</dt><dd><ul>
+<li><p><strong>Page 1:</strong> This page contains four write-code problems, each with one of two types of help: either a completed code or a mixed-up problem.</p></li>
+<li><p><strong>Page 2:</strong> This page contains two write-code problems, each without any help features, you need to finish them independently.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Please answer these problems to the best of your ability without any outside help.</p></li>
+<li><p>You can stop working on a problem after you worked on it for about five minutes without solving it.</p></li>
+</ul>
+<section id="practice-problems-page-1">
+<h2>Practice Problems - Page 1<a class="headerlink" href="#practice-problems-page-1" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The four write-code problems below include a <strong>“Help”</strong> button under each problem description</p></li>
+<li><p>You can use it to help you solve the write-code problem. It’s your turn!  💻</p></li>
+</ul>
+
+<div class="runestone explainer ac_section ">
+<div data-component="activecode" id=sum13_acop data-question_label="1">
+<div id=sum13_acop_question class="ac_question">
+<dl>
+<dt>Finish the function <code class="docutils literal notranslate"><span class="pre">sum13</span></code> below:</dt><dd><ul class="simple">
+<li><p>It takes a list of numbers called <code class="docutils literal notranslate"><span class="pre">nums</span></code> and returns the sum of the numbers in the list <code class="docutils literal notranslate"><span class="pre">nums</span></code>.</p></li>
+<li><p>It returns <code class="docutils literal notranslate"><span class="pre">0</span></code> for an empty list</p></li>
+<li><p>Except the number 13 is very unlucky, so it does not include the number 13 in the sum.</p></li>
+<li><p>It does not include a number that directly follows a 13 in the list <code class="docutils literal notranslate"><span class="pre">nums</span></code> in the sum.</p></li>
+</ul>
+<table class="docutils align-left" id="sum13-table-op" style="width: 50">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example Input</p></th>
+<th class="head"><p>Expected Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sum13([13,</span> <span class="pre">2])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code> - ignores the 13 and 2 (follow a 13 in the list)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sum13([1,</span> <span class="pre">13,</span> <span class="pre">4,</span> <span class="pre">2])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code> - ignores the 13 and 4 (follow a 13 in the list)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sum13([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">6</span></code> - no 13 so sums all</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+
+</div>
+<textarea data-lang="python" id="sum13_acop_editor" 
+      data-timelimit=25000    data-openaiparsons="true"   
+    data-audio=''      
+           data-wasm=/_static
+     style="visibility: hidden;">
+def sum13(nums):
+
+
+
+
+
+
+====
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        self.assertEqual(sum13([1, 13, 2, 4]), 5, 'sum13([1, 13, 2, 4])')
+        self.assertEqual(sum13([13, 2]), 0, 'sum13([13, 2])')
+        self.assertEqual(sum13([1, 3, 2]), 6, 'sum13([1, 3, 2])')
+        self.assertEqual(sum13([14, -2]), 12, 'sum13([14, -2])')
+        self.assertEqual(sum13([14, -2, 13]), 12, 'sum13([14, -2, 13])')
+
+myTests().main()
+</textarea>
+</div>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" data-question_label="2" class="journal" id=error_sa_1_pcp    >
+<p>List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="3" id="cogload_1_pcp"  style="visibility: hidden;">
+            <p>In solving the preceding problem I invested:</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg"><img alt="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" src="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-8.0, 10.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="4" id="how_use_1_pcp"  style="visibility: hidden;">
+            <p>How did you use the “Help” to solve the preceding problem? Please select the option that best describes your situation.</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/KcJsPPPs/help-situation.png"><img alt="https://i.postimg.cc/KcJsPPPs/help-situation.png" src="https://i.postimg.cc/KcJsPPPs/help-situation.png" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-5.0, 7.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="5" id="engagement_1_pcp"  style="visibility: hidden;">
+            <p>The following statements ask you to reflect on your experience of engaging with the “Help”. The “Help” including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.</p>
+<blockquote>
+<div><img alt="https://i.postimg.cc/NFq6zKF8/scale.png" src="https://i.postimg.cc/NFq6zKF8/scale.png" />
+</div></blockquote>
+<p><strong>A.</strong> I found the “Help” above confusing to use. <input type="text"></p>
+<p><strong>B.</strong> I feel engaged when using the above “Help”. <input type="text"></p>
+<p><strong>C.</strong> Using the above “Help” was worthwhile. <input type="text"></p>
+<p><strong>D.</strong> The above “Help” was useful in helping me <strong>solve the preceding problem</strong>. <input type="text"></p>
+<p><strong>E.</strong> The above “Help” was useful in improving my <strong>understanding on that topic</strong>. <input type="text"></p>
+<p><strong>F.</strong> Using the “Help” for the preceding problem increased my confidence to solve a similar problem from scratch on my own. <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+<div class="runestone explainer ac_section ">
+<div data-component="activecode" id=get_counts_dict_acoc data-question_label="6">
+<div id=get_counts_dict_acoc_question class="ac_question">
+<dl>
+<dt>Finish the function <code class="docutils literal notranslate"><span class="pre">get_counts</span></code> below:</dt><dd><ul class="simple">
+<li><p>It takes a list of strings <code class="docutils literal notranslate"><span class="pre">s_list</span></code></p></li>
+<li><p>It returns a dictionary that has the number of times each unique string appears in the <code class="docutils literal notranslate"><span class="pre">s_list</span></code>.</p></li>
+</ul>
+<table class="docutils align-left" id="get-counts-dict-table-oc" style="width: 50">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example Input</p></th>
+<th class="head"><p>Expected Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_counts(['b','b','b','b','a'])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'b':</span> <span class="pre">4,</span> <span class="pre">'a':</span> <span class="pre">1}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_counts(['b','b','b','a','a'])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'a':</span> <span class="pre">2,</span> <span class="pre">'b':</span> <span class="pre">3}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_counts(['b','b','a','a'])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'b':</span> <span class="pre">2,</span> <span class="pre">'a':</span> <span class="pre">2}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+
+</div>
+<textarea data-lang="python" id="get_counts_dict_acoc_editor" 
+      data-timelimit=25000     data-openaicode="true"  
+    data-audio=''      
+           data-wasm=/_static
+     style="visibility: hidden;">
+def get_counts(s_list):
+
+
+
+
+
+
+
+
+
+====
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+       self.assertEqual(get_counts(['a','b','a']), {'a':2, 'b':1}, "get_counts('a','b','a')")
+       self.assertEqual(get_counts([]), {}, "get_counts([])")
+       self.assertEqual(get_counts(['a','a','a']), {'a':3}, "get_counts('a','a','a')")
+       self.assertEqual(get_counts(['b','a','a']), {'b':1, 'a':2}, "get_counts('b','a','a')")
+       self.assertEqual(get_counts(['a','a','b']), {'a':2, 'b':1}, "get_counts('a','a','b')")
+       self.assertEqual(get_counts(['a','c','b']), {'a':1, 'c': 1, 'b':1}, "get_counts('a','c','b')")
+       self.assertEqual(get_counts(['a','c','b','c']), {'a':1, 'c': 2, 'b':1}, "get_counts('a','c','b','c')")
+       self.assertEqual(get_counts(['b','c','b','c']), {'b':2, 'c': 2}, "get_counts('b','c','b','c')")
+       self.assertEqual(get_counts(['b','c','b','b']), {'b':3, 'c': 1}, "get_counts('b','c','b','b')")
+       self.assertEqual(get_counts(['b','b','b','b']), {'b':4}, "get_counts('b','b','b','b')")
+
+
+
+myTests().main()
+</textarea>
+</div>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" data-question_label="7" class="journal" id=error_sa_2_pcp    >
+<p>List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="8" id="cogload_2_pcp"  style="visibility: hidden;">
+            <p>In solving the preceding problem I invested:</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg"><img alt="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" src="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-8.0, 10.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="9" id="how_use_2_pcp"  style="visibility: hidden;">
+            <p>How did you use the “Help” to solve the preceding problem? Please select the option that best describes your situation.</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/KcJsPPPs/help-situation.png"><img alt="https://i.postimg.cc/KcJsPPPs/help-situation.png" src="https://i.postimg.cc/KcJsPPPs/help-situation.png" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-5.0, 7.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="10" id="engagement_2_pcp"  style="visibility: hidden;">
+            <p>The following statements ask you to reflect on your experience of engaging with the “Help”. The “Help” including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.</p>
+<blockquote>
+<div><img alt="https://i.postimg.cc/NFq6zKF8/scale.png" src="https://i.postimg.cc/NFq6zKF8/scale.png" />
+</div></blockquote>
+<p><strong>A.</strong> I found the “Help” above confusing to use. <input type="text"></p>
+<p><strong>B.</strong> I feel engaged when using the above “Help”. <input type="text"></p>
+<p><strong>C.</strong> Using the above “Help” was worthwhile. <input type="text"></p>
+<p><strong>D.</strong> The above “Help” was useful in helping me <strong>solve the preceding problem</strong>. <input type="text"></p>
+<p><strong>E.</strong> The above “Help” was useful in improving my <strong>understanding on that topic</strong>. <input type="text"></p>
+<p><strong>F.</strong> Using the “Help” for the preceding problem increased my confidence to solve a similar problem from scratch on my own. <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+<div class="runestone explainer ac_section ">
+<div data-component="activecode" id=is_ascending_acop data-question_label="11">
+<div id=is_ascending_acop_question class="ac_question">
+<dl class="simple">
+<dt>Finish a function <code class="docutils literal notranslate"><span class="pre">is_ascending(nums)</span></code> below:</dt><dd><ul class="simple">
+<li><p>It takes a list of numbers <code class="docutils literal notranslate"><span class="pre">nums</span></code> as input.</p></li>
+<li><p>It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the numbers in the list <code class="docutils literal notranslate"><span class="pre">nums</span></code> are sorted in ascending order and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p>If the list <code class="docutils literal notranslate"><span class="pre">nums</span></code> has less than two numbers in it return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<table class="longtable docutils align-left" id="is-ascending-table-acop">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example Input</p></th>
+<th class="head"><p>Expected Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">is_ascending([1,2,3])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">is_ascending([1])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">is_ascending([3,</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">is_ascending([1,</span> <span class="pre">3,</span> <span class="pre">2])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<textarea data-lang="python" id="is_ascending_acop_editor" 
+      data-timelimit=25000    data-openaiparsons="true"   
+    data-audio=''      
+           data-wasm=/_static
+     style="visibility: hidden;">
+def is_ascending(nums):
+
+
+
+
+
+
+
+
+
+
+=====
+
+
+from unittest.gui import TestCaseGui
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        self.assertEqual(is_ascending([1,2,3]),True,"is_ascending([1,2,3])")
+        self.assertEqual(is_ascending([3, 3, 2, 1]),False,"is_ascending([3,3,2,1])")
+        self.assertEqual(is_ascending([3,1,2]),False,"is_ascending([3,1,2])")
+        self.assertEqual(is_ascending([2,3,1]),False,"is_ascending([2,3,1])")
+        self.assertEqual(is_ascending([1,2,4,3]),False,"is_ascending([1,2,4,3])")
+        self.assertEqual(is_ascending([1,2,3,0]),False,"is_ascending([1,2,3,0])")
+        self.assertEqual(is_ascending([4,1,2,3]),False,"is_ascending(4,1,2,3])")
+        self.assertEqual(is_ascending([1,4,2,3]),False,"is_ascending(1,4,2,3])")
+        self.assertEqual(is_ascending([1,2,3,4]),True,"is_ascending([1,2,3,4])")
+        self.assertEqual(is_ascending([1]),True,"is_ascending([1])")
+        self.assertEqual(is_ascending([]),True,"is_ascending([])")
+
+
+myTests().main()
+</textarea>
+</div>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" data-question_label="12" class="journal" id=error_sa_3_pcp    >
+<p>List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="13" id="cogload_3_pcp"  style="visibility: hidden;">
+            <p>In solving the preceding problem I invested:</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg"><img alt="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" src="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-8.0, 10.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="14" id="how_use_3_pcp"  style="visibility: hidden;">
+            <p>How did you use the “Help” to solve the preceding problem? Please select the option that best describes your situation.</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/KcJsPPPs/help-situation.png"><img alt="https://i.postimg.cc/KcJsPPPs/help-situation.png" src="https://i.postimg.cc/KcJsPPPs/help-situation.png" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-5.0, 7.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="15" id="engagement_3_pcp"  style="visibility: hidden;">
+            <p>The following statements ask you to reflect on your experience of engaging with the “Help”. The “Help” including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.</p>
+<blockquote>
+<div><img alt="https://i.postimg.cc/NFq6zKF8/scale.png" src="https://i.postimg.cc/NFq6zKF8/scale.png" />
+</div></blockquote>
+<p><strong>A.</strong> I found the “Help” above confusing to use. <input type="text"></p>
+<p><strong>B.</strong> I feel engaged when using the above “Help”. <input type="text"></p>
+<p><strong>C.</strong> Using the above “Help” was worthwhile. <input type="text"></p>
+<p><strong>D.</strong> The above “Help” was useful in helping me <strong>solve the preceding problem</strong>. <input type="text"></p>
+<p><strong>E.</strong> The above “Help” was useful in improving my <strong>understanding on that topic</strong>. <input type="text"></p>
+<p><strong>F.</strong> Using the “Help” for the preceding problem increased my confidence to solve a similar problem from scratch on my own. <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+<div class="runestone explainer ac_section ">
+<div data-component="activecode" id=nested_dict_acoc data-question_label="16">
+<div id=nested_dict_acoc_question class="ac_question">
+<dl class="simple">
+<dt>Finish the function <code class="docutils literal notranslate"><span class="pre">get_order_totals()</span></code> below:</dt><dd><ul class="simple">
+<li><p>It takes a list of tuples <code class="docutils literal notranslate"><span class="pre">orders</span></code> and returns a new nested dictionary with the same information.</p></li>
+<li><p>Each tuple in <code class="docutils literal notranslate"><span class="pre">orders</span></code> includes 3 values; the first is the person’s name, the second is item name, and the third is the quantity.</p></li>
+<li><p>Note that there may be more than one tuple for the same person and item - your dictionary should total all the quantities for the same person and item.</p></li>
+</ul>
+</dd>
+</dl>
+<table class="docutils align-left" id="nested-dict-table-op" style="width: 50">
+<thead>
+<tr class="row-odd"><th class="head"><p>Example Input</p></th>
+<th class="head"><p>Expected Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_order_totals([('Holden',</span> <span class="pre">'pizza',</span> <span class="pre">1),</span> <span class="pre">('Cristina',</span> <span class="pre">'taco',</span> <span class="pre">2),</span> <span class="pre">('Holden',</span> <span class="pre">'pizza',</span> <span class="pre">1)])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'Holden':</span> <span class="pre">{'pizza':</span> <span class="pre">2},</span> <span class="pre">'Cristina':</span> <span class="pre">{'taco':</span> <span class="pre">2}}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_order_totals([('Bob',</span> <span class="pre">'pizza',</span> <span class="pre">1),</span> <span class="pre">('Mike',</span> <span class="pre">'taco',</span> <span class="pre">2),</span> <span class="pre">('Bob',</span> <span class="pre">'taco',</span> <span class="pre">1)])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'Bob':</span> <span class="pre">{'pizza':</span> <span class="pre">1,</span> <span class="pre">'taco':</span> <span class="pre">1},</span> <span class="pre">'Mike':</span> <span class="pre">{'taco':</span> <span class="pre">2}}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_order_totals([('Cristina',</span> <span class="pre">'pizza',</span> <span class="pre">1),</span> <span class="pre">('Cristina',</span> <span class="pre">'taco',</span> <span class="pre">1),</span> <span class="pre">('Cristina',</span> <span class="pre">'taco',</span> <span class="pre">3)])</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{'Cristina':</span> <span class="pre">{'pizza':</span> <span class="pre">1,</span> <span class="pre">'taco':</span> <span class="pre">4}}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<textarea data-lang="python" id="nested_dict_acoc_editor" 
+      data-timelimit=25000     data-openaicode="true"  
+    data-audio=''      
+           data-wasm=/_static
+     style="visibility: hidden;">
+def get_order_totals(orders):
+
+
+
+
+
+
+
+
+====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+        self.assertEqual(get_order_totals([('Holden', 'pizza', 1), ('Cristina', 'taco', 2), ('Holden', 'pizza', 1)]), {'Holden': {'pizza': 2}, 'Cristina': {'taco': 2}})
+        self.assertEqual(get_order_totals([('person1', 'food1', 2), ('person2', 'food2', 2)]), {'person1': {'food1': 2}, 'person2': {'food2': 2}})
+        self.assertEqual(get_order_totals([('person1', 'food1', 1)]), {'person1': {'food1': 1}})
+        self.assertEqual(get_order_totals([('p1', 'f1', 2), ('p1', 'f1', 3), ('p2', 'f1', 4), ('p1', 'f2', 5), ('p2', 'f2', 2)])['p1']['f1'], 5)
+
+myTests().main()
+</textarea>
+</div>
+</div>
+
+<div class="runestone">
+<div data-component="shortanswer" data-question_label="17" class="journal" id=error_sa_4_pcp    >
+<p>List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.</p>
+
+</div>
+</div> <!-- end of runestone div -->
+
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="18" id="cogload_4_pcp"  style="visibility: hidden;">
+            <p>In solving the preceding problem I invested:</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg"><img alt="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" src="https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-8.0, 10.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="19" id="how_use_4_pcp"  style="visibility: hidden;">
+            <p>How did you use the “Help” to solve the preceding problem? Please select the option that best describes your situation.</p>
+<a class="reference internal image-reference" href="https://i.postimg.cc/KcJsPPPs/help-situation.png"><img alt="https://i.postimg.cc/KcJsPPPs/help-situation.png" src="https://i.postimg.cc/KcJsPPPs/help-situation.png" style="width: 1000px;" /></a>
+<input type="text">
+        <script type="application/json">
+            [[{"number": [-5.0, 7.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            
+        <div class="runestone ">
+        <div data-component="fillintheblank" data-question_label="20" id="engagement_4_pcp"  style="visibility: hidden;">
+            <p>The following statements ask you to reflect on your experience of engaging with the “Help”. The “Help” including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.</p>
+<blockquote>
+<div><img alt="https://i.postimg.cc/NFq6zKF8/scale.png" src="https://i.postimg.cc/NFq6zKF8/scale.png" />
+</div></blockquote>
+<p><strong>A.</strong> I found the “Help” above confusing to use. <input type="text"></p>
+<p><strong>B.</strong> I feel engaged when using the above “Help”. <input type="text"></p>
+<p><strong>C.</strong> Using the above “Help” was worthwhile. <input type="text"></p>
+<p><strong>D.</strong> The above “Help” was useful in helping me <strong>solve the preceding problem</strong>. <input type="text"></p>
+<p><strong>E.</strong> The above “Help” was useful in improving my <strong>understanding on that topic</strong>. <input type="text"></p>
+<p><strong>F.</strong> Using the “Help” for the preceding problem increased my confidence to solve a similar problem from scratch on my own. <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}], [{"number": [-4.0, 6.0], "feedback": "<p>Saved</p>\n"}, {"regex": "^\\s*.*\\s*$", "regexFlags": "", "feedback": "<p>Incorrect</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            </section>
+<section id="what-to-do-next">
+<h2>What to do next<a class="headerlink" href="#what-to-do-next" title="Permalink to this heading">¶</a></h2>
+<p>Click on the following link to work on the practice problems on Page 2: <a id="pps-practice-page2" href="pps-PCP_end.html"><font size="+1"><b>Practice Page 2</b></font></a></p></section>
+</section>
+
+
+  
+    
+      {% if show_ethical_ad  %}
+      <div style="width: 100%">
+      <div data-ea-publisher="runestoneacademy" data-ea-type="image" style="display: flex; justify-content: center"></div>
+      </div>
+      {% endif %}
+    
+  
+
+  <div id="scprogresscontainer">
+    You have attempted <span id="scprogresstotal"></span> of <span id="scprogressposs"></span> activities on this page <div id="subchapterprogress" aria-label="Page progress"></div>
+  </div>
+
+  <ul role="navigation" class="nextprev-list nextprev-list" aria-label="Change page">
+</ul>
+
+<script>
+window.addEventListener('load', (event) => {
+  $('#relations-prev').tooltip({'placement': 'right', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement': 'left', 'delay': { show: 100, hide: 50}});
+});
+</script>
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      
+      <span id='numuserspan'></span><span class='loggedinuser'></span>
+      
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright .
+      Created using <a href="http://runestoneinteractive.org/">Runestone</a> 7.2.7.
+    </p>
+  </div>
+</footer>
+
+
+
+  
+    {% if settings.google_ga %}
+      <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ settings.google_ga }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {% endif %}
+  
+
+  
+    <script type="application/json" class="js-hypothesis-config">
+    {
+      "showHighlights": false
+    }
+    </script>
+
+    <script async src="https://hypothes.is/embed.js"></script>
+    <!--provide space to prevent hypothes.is sidebar from obscuring content-->
+    <style>@media screen and (max-width:767px) { body { padding-right: 21px; }}</style>
+
+  
+
+
+<script>
+  window.addEventListener('load', (event) => {
+    runestoneComponents.getSwitch();
+  });
+</script>
+
+
+  </body>
+</html>

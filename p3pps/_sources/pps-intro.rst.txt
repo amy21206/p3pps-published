@@ -1,0 +1,187 @@
+Introduction to the Help Feature
+================================
+
+Pop-up a correct code to help you finish the write-code problem
+---------------------------------------------------------------
+
+:Help:
+    You may see a problem that allows you to pop-up a completed corret code for this write-code problem. 
+    
+    To see the completed code for this write-code problem, click the **"Help"** button below the problem description.
+
+:Close Help:
+    You can close the provided help by clicking the **"Close Help"** button.
+    
+:Check Help Again:
+    You can open to use the generated help again by clicking the **"View Help Again"** button.
+
+:🔁 Regenerate Help:
+    By using the **🔁 Regenerate Help** button, you can generate a potentially different correct codefor this write-code problem. We recommend to regenerate the help when
+        - you do not like the provided code, and want to see a different help.
+        - you changed your code and want to try a different help.
+
+:Copy Answer to Clipboard:
+    You can use the **Copy Answer to Clipboard** button to copy the generated correct codeto the clipboard and paste it in the write-code box.
+
+🤗 You are free to use this feature to assist in solving the write-code problem!
+
+
+.. activecode::  str-mixed-example-oc
+    :autograde: unittest
+    :nocodelens:
+    :openaicode:
+
+    Finish a function, ``phrase(person, thing)``:
+        - It has ``person`` and ``thing`` as input.
+        - First verify whether ``person`` and ``thing`` are strings. If not, return ``False``.
+        - If ``person`` and ``thing`` are two strings, return one string with the characters in ``person``, followed by an empty space, and then followed by ``thing``
+        - Make sure the first letter in ``person`` is capitalized and all the characters in ``thing`` are lowercase.
+       
+        .. table::
+            :name: phrase_table_op
+            :align: left
+            :width: 50
+
+            +-------------------------------------+---------------------------------------+
+            | Example Input                       | Expected Output                       |
+            +=====================================+=======================================+
+            |``phrase("Sam", "Likes to code")``   | ``"Sam likes to code"``               |
+            +-------------------------------------+---------------------------------------+
+            |``phrase("ANN", "Likes to CODE")``   | ``"Ann likes to code"``               |
+            +-------------------------------------+---------------------------------------+
+            |``phrase(1, "Python")``              | ``False``                             |
+            +-------------------------------------+---------------------------------------+
+
+    ~~~~
+    # Here is a student's buggy code
+    # You can click the "Help" button above to see what the "Completed Code Help" provides.
+    
+    def phrase(person, thing):
+        if type(person) = str or type(thing) = str:
+            person = person.capitalize()
+            thing = thing.lowercase
+            return person + thing
+        else: 
+            return ""
+
+
+    ====
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def testOne(self):
+            self.assertEqual(phrase("sam", "Likes to code"), "Sam likes to code", 'phrase("sam", " Likes to code")')
+            self.assertEqual(phrase("mary-anne", "likes to sing"), "Mary-anne likes to sing", 'phrase("mary-anne", " likes to sing")')
+            self.assertEqual(phrase("ANNA", "likes to dance"), "Anna likes to dance", 'phrase("ANNA", " likes to dance")')
+            self.assertEqual(phrase(1111, "likes programming"), False, 'phrase(1111, " likes programming")')
+
+
+
+    myTests().main()
+
+
+💻 Pop-up a mixed-up code problem to help you finish the write-code problem
+----------------------------------------------------------------------------
+
+:Mixed-up Code Problem: 
+    * Movable Blocks:
+        - Choose the correct blocks from the left box to the right box and sort them into the correct order.
+    * Static Blocks: 
+        - The Static blocks are the blocks that are static in the right box. You can not move these lines.
+    * Paired Block Sets: 
+        - Movable blocks that are paired with additional blocks that are not necessary in a correct solution.
+        - These distractors may contain syntactic or semantic errors.
+        - Purple edges are used to pair the correct code block and the incorrect (distractor) code block. 
+        - The correct code is randomly shown above or below the distractor block.
+
+
+🤗 You are free to use the **"Help"** feature to assist in solving the write-code problem!
+
+
+
+.. activecode::  str-mixed-example-op
+    :autograde: unittest
+    :nocodelens:
+    :openaiparsons:
+
+    Finish a function, ``phrase(person, thing)``:
+        - It has ``person`` and ``thing`` as input.
+        - First verify whether ``person`` and ``thing`` are strings. If not, return ``False``.
+        - If ``person`` and ``thing`` are two strings, return one string with the characters in ``person``, followed by an empty space, and then followed by ``thing``
+        - Make sure the first letter in ``person`` is capitalized and all the characters in ``thing`` are lowercase.
+
+        
+        .. table::
+            :name: phrase_table_op
+            :align: left
+            :width: 50
+
+
+            +-------------------------------------+---------------------------------------+
+            | Example Input                       | Expected Output                       |
+            +=====================================+=======================================+
+            |``phrase("Sam", "Likes to code")``   | ``"Sam likes to code"``               |
+            +-------------------------------------+---------------------------------------+
+            |``phrase("ANN", "Likes to CODE")``   | ``"Ann likes to code"``               |
+            +-------------------------------------+---------------------------------------+
+            |``phrase(1, "Python")``              | ``False``                             |
+            +-------------------------------------+---------------------------------------+
+
+
+    ~~~~
+    # Here is a student's buggy code
+    # You can click the "Help" button above to see what the "Mixed-up Code Help" provides.
+    
+    def phrase(person, thing):
+        if type(person) = str or type(thing) == str:
+            person = person.capitalize()
+            thing = thing.lowercase
+            return person + thing
+        else: 
+            return ""
+
+
+    ====
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+        def testOne(self):
+            self.assertEqual(phrase("sam", "Likes to code"), "Sam likes to code", 'phrase("sam", " Likes to code")')
+            self.assertEqual(phrase("mary-anne", "likes to sing"), "Mary-anne likes to sing", 'phrase("mary-anne", " likes to sing")')
+            self.assertEqual(phrase("ANNA", "likes to dance"), "Anna likes to dance", 'phrase("ANNA", " likes to dance")')
+            self.assertEqual(phrase(1111, "likes programming"), False, 'phrase(1111, " likes programming")')
+
+
+
+    myTests().main()
+
+
+**🧠🗣️ A verbal introduction to think-aloud provided by the researcher**
+
+You can use the following statements to help you keep talking during this process:
+
+- I am trying to ...
+- I need to ...
+- This made me think of...
+- That didn't make sense. Why...
+- I think ___ will happen next.
+- I reread ___ because...
+- I was confused that...
+- I think the most important part was...
+- That is ___ because...
+- I wonder why...
+- I just thought of...
+
+
+
+What to do next
+^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+
+    <p>Click on the following link to go the practice problems: <a id="pps-practice1" href="pps-PCP.html"><font size="+1"><b>🔥-Practice PCP</b></font></a></p>
+    <hr>
+    <p>Click on the following link to go the practice problems: <a id="pps-practice2" href="pps-CPC.html"><font size="+1"><b>💧-Practice CPC</b></font></a></p>
+
+

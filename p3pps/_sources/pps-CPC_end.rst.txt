@@ -1,0 +1,137 @@
+Practice Problems - Page 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* 💻 Please complete the two write-code problems below independently. 
+
+* Again, you can stop working on a problem after you worked on it for about five minutes without solving it. 
+
+.. activecode:: sum_descending_test_oc
+    :autograde: unittest
+    :nocodelens:
+
+
+    Finish the function ``sum_descending(nums)`` below:
+        - This function takes a list of integers called ``nums`` as input.
+        - If the list ``nums`` has less than two numbers, return a string ``Two numbers or less``.
+        - First, verify whether the integers in ``nums`` are sorted in descending order. 
+            - If the integers in ``nums`` are sorted in descending order, return the sum of all numbers in the list. 
+            - If not, return a string ``Not descending``.
+
+
+    .. table::
+        :name: sum_descending_table_test_oc
+        :align: left
+        :width: 50
+
+        +---------------------------------+---------------------------+
+        | Example Input                   | Expected Output           |
+        +=================================+===========================+
+        |``sum_descending([3, 2, 1])``    | ``6``                     |
+        +---------------------------------+---------------------------+
+        |``sum_descending([1])``          | ``Two numbers or less``   |
+        +---------------------------------+---------------------------+
+        |``sum_descending([3, 3, 7, 2])`` | ``Not descending``        |
+        +---------------------------------+---------------------------+
+        |``sum_descending([8, 7, 6, 5])`` | ``26``                    |
+        +---------------------------------+---------------------------+
+        |``sum_descending([8, 9, 7, 10])``| ``Not descending``        |
+        +---------------------------------+---------------------------+
+
+    ~~~~
+    def sum_descending(nums):
+
+
+
+
+
+
+
+
+
+
+    =====
+    from unittest.gui import TestCaseGui
+    class myTests(TestCaseGui):
+
+        def testOne(self):
+            self.assertEqual(sum_descending([3,2,1]),6,"sum_descending([3,2,1])")
+            self.assertEqual(sum_descending([3, 3, 2, 4]),"Not descending","sum_descending([3,3,2,4])")
+            self.assertEqual(sum_descending([3,1,2]),"Not descending","sum_descending([3,1,2])")
+            self.assertEqual(sum_descending([2,3,1]),"Not descending","sum_descending([2,3,1])")
+            self.assertEqual(sum_descending([4,3,2,1]),10,"sum_descending([4,3,2,1])")
+            self.assertEqual(sum_descending([1,2,3,0]),"Not descending","sum_descending([1,2,3,0])")
+            self.assertEqual(sum_descending([4,1,2,3]),"Not descending","sum_descending([4,1,2,3])")
+            self.assertEqual(sum_descending([1,4,2,3]),"Not descending","sum_descending([1,4,2,3])")
+            self.assertEqual(sum_descending([1]),"Two numbers or less","sum_descending([1])")
+            self.assertEqual(sum_descending([]),"Two numbers or less","sum_descending([])")
+            self.assertEqual(sum_descending([8,7,6,5]),26,"sum_descending([8,7,6,5])")
+            self.assertEqual(sum_descending([3,2,-1,-2]),2,"sum_descending([3,2,-1,-2])")
+
+
+    myTests().main()
+
+   
+
+.. activecode:: movie_genre_count_test_op
+    :autograde: unittest
+    :nocodelens:
+
+    Finish the function ``genre_count`` below:
+        - It takes a list of tuple ``movie_genre`` as input, each tuple include 
+            - first value: a top-level genre, such as ``action`` or ``comedy``.
+            - second value: a sub-genre, such as ``adventure`` or ``thriller``.
+            - third value: the count of the sub-genre 
+        - It returns a new dictionary with:
+            - each top-level genre as the key 
+            - the total count of the specified top-level genre across all sub-genres for each genre as the value.
+
+    .. table::
+        :name: movie_genre_count_table_op
+        :align: left
+        :width: 50
+
+        +----------------------------------------------------------------------------------------------------------------+---------------------------------------+
+        | Example Input                                                                                                  | Expected Output                       |
+        +================================================================================================================+=======================================+
+        |``genre_count([('action', 'adventure', 15), ('action', 'thriller', 20), ('comedy', 'romantic comedy', 10)])``   | ``{'action': 35, 'comedy': 10}``      |                 
+        +----------------------------------------------------------------------------------------------------------------+---------------------------------------+
+        |``genre_count([('action', 'adventure', 15), ('action', 'thriller', 20)])``                                      | ``{'action': 35}``                    |
+        +----------------------------------------------------------------------------------------------------------------+---------------------------------------+
+        |``genre_count([('drama', 'crime drama', 8), ('drama', 'family drama', 12), ('action', 'adventure', 15)])``      | ``{'action': 15, 'drama': 20}``       |
+        +----------------------------------------------------------------------------------------------------------------+---------------------------------------+     
+
+    ~~~~
+    def genre_count(movie_genre):
+
+
+
+
+
+
+
+
+
+
+    ====
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+
+        def testOne(self):
+            self.assertEqual(genre_count([('action', 'adventure', 15), ('action', 'thriller', 20), ('comedy', 'romantic comedy', 10)]), {'action': 35, 'comedy': 10}, "genre_count([('action', 'adventure', 15), ('action', 'thriller', 20), ('comedy', 'romantic comedy', 10)])")
+            self.assertEqual(genre_count([('action', 'adventure', 15), ('action', 'thriller', 20)]), {'action': 35}, "genre_count([('action', 'adventure', 15), ('action', 'thriller', 20)])")
+            self.assertEqual(genre_count([('drama', 'crime drama', 8), ('drama', 'family drama', 12), ('action', 'adventure', 15), ('action', 'thriller', 20)]), {'action': 35, 'drama': 20}, "genre_count([('drama', 'crime drama', 8), ('drama', 'family drama', 12), ('action', 'adventure', 15), ('action', 'thriller', 20)])")
+            self.assertEqual(genre_count({}), {}, "greater_dict_count({})")
+            self.assertEqual(genre_count([('drama', 'crime drama', 8), ('drama', 'family drama', 12), ('action', 'adventure', 15), ('action', 'thriller', 20)])['action'], 35, "genre_count([('drama', 'crime drama', 8), ('drama', 'family drama', 12), ('action', 'adventure', 15), ('action', 'thriller', 20)])")
+
+
+            
+    myTests().main()
+
+
+
+🙌 Thank You!
+============================
+Thank you for taking part in this study!  We appreciate your time on this.
+
+

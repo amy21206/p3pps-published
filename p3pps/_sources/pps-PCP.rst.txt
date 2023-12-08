@@ -1,0 +1,489 @@
+Practice Problems
+=================
+
+* This exercise consists of six write-code problems in two pages
+    * **Page 1:** This page contains four write-code problems, each with one of two types of help: either a completed code or a mixed-up problem.
+    * **Page 2:** This page contains two write-code problems, each without any help features, you need to finish them independently.  
+
+* Please answer these problems to the best of your ability without any outside help.
+
+* You can stop working on a problem after you worked on it for about five minutes without solving it.
+
+
+Practice Problems - Page 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The four write-code problems below include a **"Help"** button under each problem description
+* You can use it to help you solve the write-code problem. It's your turn!  💻
+
+
+
+.. activecode:: sum13_acop
+    :autograde: unittest
+    :nocodelens:
+    :openaiparsons:
+
+    Finish the function ``sum13`` below:
+        - It takes a list of numbers called ``nums`` and returns the sum of the numbers in the list ``nums``.
+        - It returns ``0`` for an empty list
+        - Except the number 13 is very unlucky, so it does not include the number 13 in the sum.
+        - It does not include a number that directly follows a 13 in the list ``nums`` in the sum.
+
+        .. table::
+            :name: sum13_table_op
+            :align: left
+            :width: 50
+
+            +-----------------------------------+---------------------------------------------------------------+
+            | Example Input                     | Expected Output                                               |
+            +===================================+===============================================================+
+            |``sum13([13, 2])``                 | ``0`` - ignores the 13 and 2 (follow a 13 in the list)        |
+            +-----------------------------------+---------------------------------------------------------------+
+            |``sum13([1, 13, 4, 2])``           | ``3`` - ignores the 13 and 4 (follow a 13 in the list)        |
+            +-----------------------------------+---------------------------------------------------------------+
+            |``sum13([1, 2, 3])``               | ``6`` - no 13 so sums all                                     |
+            +-----------------------------------+---------------------------------------------------------------+
+    ~~~~
+    def sum13(nums):
+
+
+
+
+ 
+ 
+    ====
+    from unittest.gui import TestCaseGui
+    class myTests(TestCaseGui):
+
+        def testOne(self):
+            self.assertEqual(sum13([1, 13, 2, 4]), 5, 'sum13([1, 13, 2, 4])')
+            self.assertEqual(sum13([13, 2]), 0, 'sum13([13, 2])')
+            self.assertEqual(sum13([1, 3, 2]), 6, 'sum13([1, 3, 2])')
+            self.assertEqual(sum13([14, -2]), 12, 'sum13([14, -2])')
+            self.assertEqual(sum13([14, -2, 13]), 12, 'sum13([14, -2, 13])')
+         
+    myTests().main()
+
+
+.. shortanswer:: error_sa_1_pcp
+
+    List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.
+   
+.. fillintheblank:: cogload_1_pcp
+
+    In solving the preceding problem I invested:
+
+    .. image:: https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg
+        :width: 1000
+    
+    -   :1.0 9.0:       Saved
+        :.*:            Incorrect
+
+.. fillintheblank:: how_use_1_pcp
+    
+    How did you use the "Help" to solve the preceding problem? Please select the option that best describes your situation.
+
+
+    .. image::  https://i.postimg.cc/KcJsPPPs/help-situation.png
+        :width: 1000
+
+    -   :1.0 6.0:       Saved
+        :.*:            Incorrect
+
+
+.. fillintheblank:: engagement_1_pcp
+
+
+    The following statements ask you to reflect on your experience of engaging with the "Help". The "Help" including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.
+
+        .. image:: https://i.postimg.cc/NFq6zKF8/scale.png
+
+
+    **A.** I found the "Help" above confusing to use. |blank|
+
+    **B.** I feel engaged when using the above "Help". |blank|
+
+    **C.** Using the above "Help" was worthwhile. |blank|
+
+    **D.** The above "Help" was useful in helping me **solve the preceding problem**. |blank|
+
+    **E.** The above "Help" was useful in improving my **understanding on that topic**. |blank|
+
+    **F.** Using the "Help" for the preceding problem increased my confidence to solve a similar problem from scratch on my own. |blank|
+
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+
+
+.. activecode:: get_counts_dict_acoc
+    :autograde: unittest
+    :nocodelens:
+    :openaicode:
+
+    Finish the function ``get_counts`` below:
+        - It takes a list of strings ``s_list``
+        - It returns a dictionary that has the number of times each unique string appears in the ``s_list``. 
+
+
+        .. table::
+            :name: get_counts_dict_table_oc
+            :align: left
+            :width: 50
+
+            +----------------------------------------------------+------------------------------------+
+            | Example Input                                      | Expected Output                    |
+            +====================================================+====================================+
+            |``get_counts(['b','b','b','b','a'])``               | ``{'b': 4, 'a': 1}``               |
+            +----------------------------------------------------+------------------------------------+
+            |``get_counts(['b','b','b','a','a'])``               | ``{'a': 2, 'b': 3}``               |
+            +----------------------------------------------------+------------------------------------+
+            |``get_counts(['b','b','a','a'])``                   | ``{'b': 2, 'a': 2}``               |
+            +----------------------------------------------------+------------------------------------+
+
+    ~~~~
+    def get_counts(s_list):
+
+
+
+
+
+
+
+
+
+    ====
+    from unittest.gui import TestCaseGui
+
+    class myTests(TestCaseGui):
+
+       def testOne(self):
+           self.assertEqual(get_counts(['a','b','a']), {'a':2, 'b':1}, "get_counts('a','b','a')")
+           self.assertEqual(get_counts([]), {}, "get_counts([])")
+           self.assertEqual(get_counts(['a','a','a']), {'a':3}, "get_counts('a','a','a')")
+           self.assertEqual(get_counts(['b','a','a']), {'b':1, 'a':2}, "get_counts('b','a','a')")
+           self.assertEqual(get_counts(['a','a','b']), {'a':2, 'b':1}, "get_counts('a','a','b')")
+           self.assertEqual(get_counts(['a','c','b']), {'a':1, 'c': 1, 'b':1}, "get_counts('a','c','b')")
+           self.assertEqual(get_counts(['a','c','b','c']), {'a':1, 'c': 2, 'b':1}, "get_counts('a','c','b','c')")
+           self.assertEqual(get_counts(['b','c','b','c']), {'b':2, 'c': 2}, "get_counts('b','c','b','c')")
+           self.assertEqual(get_counts(['b','c','b','b']), {'b':3, 'c': 1}, "get_counts('b','c','b','b')")
+           self.assertEqual(get_counts(['b','b','b','b']), {'b':4}, "get_counts('b','b','b','b')")
+           
+           
+           
+    myTests().main()
+
+
+.. shortanswer:: error_sa_2_pcp
+
+   List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.
+ 
+.. fillintheblank:: cogload_2_pcp
+    
+
+    In solving the preceding problem I invested:
+
+    .. image:: https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg
+        :width: 1000
+    
+    -   :1.0 9.0:       Saved
+        :.*:            Incorrect
+
+.. fillintheblank:: how_use_2_pcp
+    
+    
+    How did you use the "Help" to solve the preceding problem? Please select the option that best describes your situation.
+
+
+    .. image::  https://i.postimg.cc/KcJsPPPs/help-situation.png
+        :width: 1000
+
+    -   :1.0 6.0:       Saved
+        :.*:            Incorrect
+
+
+.. fillintheblank:: engagement_2_pcp
+
+    The following statements ask you to reflect on your experience of engaging with the "Help". The "Help" including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.
+
+        .. image:: https://i.postimg.cc/NFq6zKF8/scale.png
+
+
+    **A.** I found the "Help" above confusing to use. |blank|
+
+    **B.** I feel engaged when using the above "Help". |blank|
+
+    **C.** Using the above "Help" was worthwhile. |blank|
+
+    **D.** The above "Help" was useful in helping me **solve the preceding problem**. |blank|
+
+    **E.** The above "Help" was useful in improving my **understanding on that topic**. |blank|
+
+    **F.** Using the "Help" for the preceding problem increased my confidence to solve a similar problem from scratch on my own. |blank|
+
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+
+
+
+.. activecode:: is_ascending_acop
+        :autograde: unittest
+        :nocodelens:
+        :openaiparsons:
+
+        Finish a function ``is_ascending(nums)`` below:
+            - It takes a list of numbers ``nums`` as input.
+            - It returns ``True`` if the numbers in the list ``nums`` are sorted in ascending order and ``False`` otherwise. 
+            - If the list ``nums`` has less than two numbers in it return ``True``.
+        
+        .. table::
+            :name: is_ascending_table_acop
+            :class: longtable
+            :align: left
+
+            +--------------------------------+---------------------+
+            | Example Input                  | Expected Output     |
+            +================================+=====================+
+            |``is_ascending([1,2,3])``       | ``True``            |
+            +--------------------------------+---------------------+
+            |``is_ascending([1])``           | ``True``            |
+            +--------------------------------+---------------------+
+            |``is_ascending([3, 3, 2, 1])``  | ``False``           |
+            +--------------------------------+---------------------+
+            |``is_ascending([1, 3, 2])``     | ``False``           |
+            +--------------------------------+---------------------+
+
+        ~~~~
+        def is_ascending(nums):
+
+
+
+
+
+
+
+
+        
+
+        =====
+
+
+        from unittest.gui import TestCaseGui
+        class myTests(TestCaseGui):
+
+            def testOne(self):
+                self.assertEqual(is_ascending([1,2,3]),True,"is_ascending([1,2,3])")
+                self.assertEqual(is_ascending([3, 3, 2, 1]),False,"is_ascending([3,3,2,1])")
+                self.assertEqual(is_ascending([3,1,2]),False,"is_ascending([3,1,2])")
+                self.assertEqual(is_ascending([2,3,1]),False,"is_ascending([2,3,1])")
+                self.assertEqual(is_ascending([1,2,4,3]),False,"is_ascending([1,2,4,3])")
+                self.assertEqual(is_ascending([1,2,3,0]),False,"is_ascending([1,2,3,0])")
+                self.assertEqual(is_ascending([4,1,2,3]),False,"is_ascending(4,1,2,3])")
+                self.assertEqual(is_ascending([1,4,2,3]),False,"is_ascending(1,4,2,3])")
+                self.assertEqual(is_ascending([1,2,3,4]),True,"is_ascending([1,2,3,4])")
+                self.assertEqual(is_ascending([1]),True,"is_ascending([1])")
+                self.assertEqual(is_ascending([]),True,"is_ascending([])")
+
+
+        myTests().main()
+
+
+.. shortanswer:: error_sa_3_pcp
+
+   List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.
+ 
+.. fillintheblank:: cogload_3_pcp
+    
+
+    In solving the preceding problem I invested:
+
+    .. image:: https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg
+        :width: 1000
+    
+    -   :1.0 9.0:       Saved
+        :.*:            Incorrect
+
+.. fillintheblank:: how_use_3_pcp
+    
+    
+    How did you use the "Help" to solve the preceding problem? Please select the option that best describes your situation.
+
+
+    .. image::  https://i.postimg.cc/KcJsPPPs/help-situation.png
+        :width: 1000
+
+    -   :1.0 6.0:       Saved
+        :.*:            Incorrect
+
+
+.. fillintheblank:: engagement_3_pcp
+
+
+    The following statements ask you to reflect on your experience of engaging with the "Help". The "Help" including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.
+
+        .. image:: https://i.postimg.cc/NFq6zKF8/scale.png
+
+
+    **A.** I found the "Help" above confusing to use. |blank|
+
+    **B.** I feel engaged when using the above "Help". |blank|
+
+    **C.** Using the above "Help" was worthwhile. |blank|
+
+    **D.** The above "Help" was useful in helping me **solve the preceding problem**. |blank|
+
+    **E.** The above "Help" was useful in improving my **understanding on that topic**. |blank|
+
+    **F.** Using the "Help" for the preceding problem increased my confidence to solve a similar problem from scratch on my own. |blank|
+
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+
+
+.. activecode:: nested_dict_acoc
+        :autograde: unittest
+        :nocodelens:
+        :openaicode:
+
+
+        Finish the function ``get_order_totals()`` below:
+            - It takes a list of tuples ``orders`` and returns a new nested dictionary with the same information. 
+            - Each tuple in ``orders`` includes 3 values; the first is the person's name, the second is item name, and the third is the quantity. 
+            - Note that there may be more than one tuple for the same person and item - your dictionary should total all the quantities for the same person and item.
+        
+        .. table::
+            :name: nested_dict_table_op
+            :align: left
+            :width: 50
+
+            +----------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+            | Example Input                                                                                      | Expected Output                                          |
+            +====================================================================================================+==========================================================+
+            |``get_order_totals([('Holden', 'pizza', 1), ('Cristina', 'taco', 2), ('Holden', 'pizza', 1)])``     | ``{'Holden': {'pizza': 2}, 'Cristina': {'taco': 2}}``    |                 
+            +----------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+            |``get_order_totals([('Bob', 'pizza', 1), ('Mike', 'taco', 2), ('Bob', 'taco', 1)])``                | ``{'Bob': {'pizza': 1, 'taco': 1}, 'Mike': {'taco': 2}}``|
+            +----------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+            |``get_order_totals([('Cristina', 'pizza', 1), ('Cristina', 'taco', 1), ('Cristina', 'taco', 3)])``  | ``{'Cristina': {'pizza': 1, 'taco': 4}}``                |
+            +----------------------------------------------------------------------------------------------------+----------------------------------------------------------+     
+        
+        ~~~~
+        def get_order_totals(orders):
+            
+
+
+
+
+
+
+
+        ====
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+
+            def testOne(self):
+                self.assertEqual(get_order_totals([('Holden', 'pizza', 1), ('Cristina', 'taco', 2), ('Holden', 'pizza', 1)]), {'Holden': {'pizza': 2}, 'Cristina': {'taco': 2}})
+                self.assertEqual(get_order_totals([('person1', 'food1', 2), ('person2', 'food2', 2)]), {'person1': {'food1': 2}, 'person2': {'food2': 2}})
+                self.assertEqual(get_order_totals([('person1', 'food1', 1)]), {'person1': {'food1': 1}})
+                self.assertEqual(get_order_totals([('p1', 'f1', 2), ('p1', 'f1', 3), ('p2', 'f1', 4), ('p1', 'f2', 5), ('p2', 'f2', 2)])['p1']['f1'], 5)
+
+        myTests().main()
+       
+
+.. shortanswer:: error_sa_4_pcp
+
+   List all the errors you identified in your code while solving the preceding problem. You can skip this question if you cannot recall them.
+
+.. fillintheblank:: cogload_4_pcp
+
+
+    In solving the preceding problem I invested:
+
+    .. image:: https://i.postimg.cc/V6j2PvVr/cognitive-load.jpg
+        :width: 1000
+
+    -   :1.0 9.0:       Saved
+        :.*:            Incorrect
+
+.. fillintheblank:: how_use_4_pcp
+
+
+    How did you use the "Help" to solve the preceding problem? Please select the option that best describes your situation.
+
+
+    .. image::  https://i.postimg.cc/KcJsPPPs/help-situation.png
+        :width: 1000
+
+    -   :1.0 6.0:       Saved
+        :.*:            Incorrect
+
+
+.. fillintheblank:: engagement_4_pcp
+
+
+    The following statements ask you to reflect on your experience of engaging with the "Help". The "Help" including the Initial Help, View Help again and Regenerate Help. For each statement, please use the following scale to indicate what is most true for you.
+
+        .. image:: https://i.postimg.cc/NFq6zKF8/scale.png
+
+
+    **A.** I found the "Help" above confusing to use. |blank|
+
+    **B.** I feel engaged when using the above "Help". |blank|
+
+    **C.** Using the above "Help" was worthwhile. |blank|
+
+    **D.** The above "Help" was useful in helping me **solve the preceding problem**. |blank|
+
+    **E.** The above "Help" was useful in improving my **understanding on that topic**. |blank|
+
+    **F.** Using the "Help" for the preceding problem increased my confidence to solve a similar problem from scratch on my own. |blank|
+
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+    -   :1.0 5.0:       Saved
+        :.*:            Incorrect
+
+
+What to do next
+^^^^^^^^^^^^^^^^
+.. raw:: html
+
+    <p>Click on the following link to work on the practice problems on Page 2: <a id="pps-practice-page2" href="pps-PCP_end.html"><font size="+1"><b>Practice Page 2</b></font></a></p>
